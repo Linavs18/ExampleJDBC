@@ -9,12 +9,11 @@ import co.edu.sena.examplejdbc.model.EmployeeType;
 import java.util.List;
 
 /**
- * Fecha: 13/03/2025
- * @author Lina Vanessa Salcedo
- * Objetivo: probar consultas/trasacciones en tabla employee_type
+ *
+ * @author USUARIO
  */
 public class TestEmployeeType {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         DBEmployeeType dBEmployeeType = new DBEmployeeType();
         //insertar
         EmployeeType employeeType = new EmployeeType (6, "SUBDIRECTOR");
