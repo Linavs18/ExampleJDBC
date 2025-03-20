@@ -9,14 +9,15 @@ import co.edu.sena.examplejdbc.model.Key;
 import java.util.List;
 
 /**
- *
- * @author USUARIO
+ *Fecha: 13/03/2025
+ * @author Lina Vanessa Salcedo 
+ * Objetivo: probar consultas/Transacciones en la tabla Key
  */
 public class TestKey {
     public static void main(String[] args) {
         DBKey dBKey = new DBKey();
         //insertar
-        Key key = new Key(5, "BICENTENARIO AMBIENTE 05", "Sala 205", 2, "Llavero rojo");
+        Key key = new Key(0, "BICENTENARIO AMBIENTE 05", "Sala 205", 2, "Llavero rojo");
         //dBKey.insert(key);
         
         //actualizar
