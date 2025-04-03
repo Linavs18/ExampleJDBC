@@ -108,6 +108,7 @@ public class DBRecord extends DBConnection{
                 //FK
                 Employee employee = dbe.findById(resultSet.getLong("employee_id"));
                 Key key = dbk.findById(resultSet.getInt("key_id"));
+                record.setStatus(resultSet.getString("status"));
                 record.setEmployee(employee);
                 record.setKey(key);
                 results.add(record);
@@ -149,6 +150,7 @@ public class DBRecord extends DBConnection{
                 //FK
                 Employee employee = dbe.findById(resultSet.getLong("employee_id"));
                 Key key = dbk.findById(resultSet.getInt("key_id"));
+                record.setStatus(resultSet.getString("status"));
                 record.setEmployee(employee);
                 record.setKey(key);
             }

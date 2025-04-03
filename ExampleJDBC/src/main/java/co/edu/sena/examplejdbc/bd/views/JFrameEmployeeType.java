@@ -75,7 +75,7 @@ public class JFrameEmployeeType extends javax.swing.JFrame {
 
         jLabel1.setText("Descripcion:");
 
-        jButtonInsert.setBackground(new java.awt.Color(0, 204, 51));
+        jButtonInsert.setBackground(new java.awt.Color(0, 204, 0));
         jButtonInsert.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButtonInsert.setText("Crear");
         jButtonInsert.addActionListener(new java.awt.event.ActionListener() {
@@ -191,7 +191,7 @@ public class JFrameEmployeeType extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearActionPerformed
-        clean();
+        clear();
     }//GEN-LAST:event_jButtonClearActionPerformed
 
     private void jButtonInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInsertActionPerformed
@@ -201,7 +201,7 @@ public class JFrameEmployeeType extends javax.swing.JFrame {
             employeeTypeController.insert(employeeType);
             MessageUtils.ShowInfoMessage("Tipo de empleado creado exitosamente");
             fillTable();
-            clean();
+            clear();
             
         } catch (Exception e) {
             MessageUtils.ShowErrorMessage(e.getMessage());
@@ -210,7 +210,7 @@ public class JFrameEmployeeType extends javax.swing.JFrame {
 
     private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
         try {
-            int option = JOptionPane.showConfirmDialog(rootPane, "Esta seguro de eliminar el rregistro?", 
+            int option = JOptionPane.showConfirmDialog(rootPane, "Esta seguro de eliminar el registro?", 
                          "Confirmacion", JOptionPane.YES_NO_OPTION);
             if(option == JOptionPane.YES_OPTION)
             {
@@ -218,7 +218,7 @@ public class JFrameEmployeeType extends javax.swing.JFrame {
                 MessageUtils.ShowInfoMessage("Tipo de empleado eliminado exitosamente");
                 fillTable();
             }
-            clean();
+            clear();
         } catch (Exception e) {
             MessageUtils.ShowErrorMessage(e.getMessage());
         }
@@ -239,7 +239,7 @@ public class JFrameEmployeeType extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTableEmployeeTypeMouseClicked
     
-    public void clean()
+    public void clear()
     {
         jTextFieldId.setText("");
         jTextFieldDescript.setText("");

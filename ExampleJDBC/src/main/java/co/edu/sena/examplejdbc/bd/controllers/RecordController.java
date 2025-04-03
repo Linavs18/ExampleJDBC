@@ -34,6 +34,11 @@ public class RecordController implements IRecordController {
             throw new Exception("La hora de salida es obligatoria");
         }
         
+        if("".equals(record.getEndTime()))
+        {
+            throw new Exception("La hora de salida es obligatoria");
+        }
+        
         //FK
         if(record.getEmployee() == null)
         {
@@ -47,7 +52,7 @@ public class RecordController implements IRecordController {
         
         if("".equals(record.getStatus()))
         {
-            throw new Exception("El estdo es obligatoria");
+            throw new Exception("El estado es obligatoria");
         }
         
         //insertar
