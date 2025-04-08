@@ -111,6 +111,7 @@ public class JFrameEmployee extends javax.swing.JFrame {
         jButtonUpdate = new javax.swing.JButton();
         jButtonDelete = new javax.swing.JButton();
         jButtonClean = new javax.swing.JButton();
+        jLabelHome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -171,6 +172,14 @@ public class JFrameEmployee extends javax.swing.JFrame {
             }
         });
 
+        jLabelHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/sena/examplejdbc/view/Home.png"))); // NOI18N
+        jLabelHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelHomeMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -188,7 +197,8 @@ public class JFrameEmployee extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabelDocument)
                                             .addComponent(jLabelAddress)
-                                            .addComponent(jLabelType, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabelType, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jTextFieldDocument)
@@ -221,8 +231,10 @@ public class JFrameEmployee extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jLabelEmployee)
-                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEmployee)
+                    .addComponent(jLabelHome))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelDocument)
                     .addComponent(jTextFieldDocument, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,10 +258,11 @@ public class JFrameEmployee extends javax.swing.JFrame {
                     .addComponent(jButtonClean))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPaneEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInsertActionPerformed
@@ -337,6 +350,12 @@ public class JFrameEmployee extends javax.swing.JFrame {
         clear();
     }//GEN-LAST:event_jButtonCleanActionPerformed
 
+    private void jLabelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelHomeMouseClicked
+       JFrameHome view = new JFrameHome();
+        view.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jLabelHomeMouseClicked
+
     
     public void clear()
     {
@@ -396,6 +415,7 @@ public class JFrameEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelDocument;
     private javax.swing.JLabel jLabelEmployee;
     private javax.swing.JLabel jLabelFullName;
+    private javax.swing.JLabel jLabelHome;
     private javax.swing.JLabel jLabelPhone;
     private javax.swing.JLabel jLabelType;
     private javax.swing.JScrollPane jScrollPaneEmployees;

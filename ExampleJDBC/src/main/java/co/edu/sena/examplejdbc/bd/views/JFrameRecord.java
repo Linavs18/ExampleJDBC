@@ -120,6 +120,7 @@ public class JFrameRecord extends javax.swing.JFrame {
         jButtonClear = new javax.swing.JButton();
         jScrollPaneRecord = new javax.swing.JScrollPane();
         jTableRecords = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TableRecord");
@@ -177,8 +178,8 @@ public class JFrameRecord extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("REGISTROS");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -225,37 +226,37 @@ public class JFrameRecord extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        jButtonInsert.setText("Crear");
         jButtonInsert.setBackground(new java.awt.Color(0, 204, 0));
         jButtonInsert.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButtonInsert.setText("Crear");
         jButtonInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonInsertActionPerformed(evt);
             }
         });
 
-        jButtonUpdate.setBackground(new java.awt.Color(255, 255, 51));
-        jButtonUpdate.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButtonUpdate.setText("Modificar");
+        jButtonUpdate.setBackground(new java.awt.Color(255, 255, 51));
         jButtonUpdate.setEnabled(false);
+        jButtonUpdate.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButtonUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonUpdateActionPerformed(evt);
             }
         });
 
-        jButtonDelete.setBackground(new java.awt.Color(255, 0, 0));
-        jButtonDelete.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButtonDelete.setText("Eliminar");
+        jButtonDelete.setBackground(new java.awt.Color(255, 0, 0));
         jButtonDelete.setEnabled(false);
+        jButtonDelete.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDeleteActionPerformed(evt);
             }
         });
 
-        jButtonClear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButtonClear.setText("Limpiar");
+        jButtonClear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButtonClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonClearActionPerformed(evt);
@@ -269,23 +270,35 @@ public class JFrameRecord extends javax.swing.JFrame {
         });
         jScrollPaneRecord.setViewportView(jTableRecords);
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/sena/examplejdbc/view/Home.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(415, 415, 415)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPaneRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 924, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(350, 350, 350)
+                                .addComponent(jLabel1))
+                            .addComponent(jScrollPaneRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 924, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(26, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(111, 111, 111)
@@ -301,9 +314,11 @@ public class JFrameRecord extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
-                .addGap(38, 38, 38)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -313,7 +328,7 @@ public class JFrameRecord extends javax.swing.JFrame {
                     .addComponent(jButtonUpdate)
                     .addComponent(jButtonDelete)
                     .addComponent(jButtonClear))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(jScrollPaneRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
@@ -412,6 +427,12 @@ public class JFrameRecord extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonDeleteActionPerformed
 
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+       JFrameHome view = new JFrameHome();
+        view.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
      public void clear()
     {
         jTextFieldId.setText("");
@@ -472,6 +493,7 @@ public class JFrameRecord extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxKey;
     private javax.swing.JComboBox<String> jComboBoxStatus;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelDate;
     private javax.swing.JLabel jLabelEmployee;
     private javax.swing.JLabel jLabelEndTime;
