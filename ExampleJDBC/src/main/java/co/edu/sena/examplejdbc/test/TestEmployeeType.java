@@ -9,8 +9,9 @@ import co.edu.sena.examplejdbc.model.EmployeeType;
 import java.util.List;
 
 /**
- *
- * @author USUARIO
+ *Fecha: 13/03/2025
+ * @author Lina Vanessa Salcedo 
+ * Objetivo: probar consultas/Transacciones en la tabla employeeType
  */
 public class TestEmployeeType {
      public static void main(String[] args) {
